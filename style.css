@@ -324,6 +324,27 @@ body.bt-generating #chat .mes.last_mes .mes_text::after{
   background:rgba(127,127,127,.06);
 }
 
+/* 历史楼层：卡片归档成一条，点开可看 */
+[data-bt="card"].bt-archived [data-bt="meta"],
+[data-bt="card"].bt-archived [data-bt="grid"],
+[data-bt="card"].bt-archived [data-bt="sec"],
+[data-bt="card"].bt-archived [data-bt="diff"]{display:none;}
+[data-bt="card"].bt-archived.bt-archived-open [data-bt="meta"],
+[data-bt="card"].bt-archived.bt-archived-open [data-bt="grid"],
+[data-bt="card"].bt-archived.bt-archived-open [data-bt="sec"],
+[data-bt="card"].bt-archived.bt-archived-open [data-bt="diff"]{display:block;}
+[data-bt="card"].bt-archived [data-bt="hd"]::before{
+  content:"已归档";
+  flex:0 0 auto;
+  order:-1;
+  padding:0 4px;
+  border:1px solid var(--bt-line);
+  border-radius:4px;
+  color:var(--bt-dim);
+  font-size:9px;
+  line-height:1.6;
+}
+
 @media (max-width:520px){
   [data-bt="grid"]{grid-template-columns:repeat(2,minmax(0,1fr));}
   [data-bt="name"]{font-size:16px;}
